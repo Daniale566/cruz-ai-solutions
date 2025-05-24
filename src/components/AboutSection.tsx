@@ -11,27 +11,27 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="sobre-mi" className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="sobre-mi" className="py-20 relative bg-gray-950">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Sobre Daniel Cruz
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Sobre <span className="text-gradient">Daniel Cruz</span>
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-400">
               Experto en automatización empresarial con IA
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <Card className="border-none shadow-lg">
+              <Card className="border-gray-800 bg-gray-900/50 backdrop-blur shadow-lg">
                 <CardContent className="p-8">
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
                     Ayudo a empresas a transformar sus operaciones mediante la integración estratégica de Inteligencia Artificial. 
-                    Mi enfoque se centra en crear soluciones prácticas que generen resultados measurables.
+                    Mi enfoque se centra en crear soluciones prácticas que generen resultados mensurables.
                   </p>
-                  <p className="text-gray-700 text-lg leading-relaxed">
+                  <p className="text-gray-300 text-lg leading-relaxed">
                     Cada proyecto lo desarrollo con un enfoque personalizado, asegurando que la tecnología se adapte 
                     perfectamente a las necesidades específicas de tu negocio.
                   </p>
@@ -40,14 +40,14 @@ export const AboutSection = () => {
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-xl font-semibold text-white mb-6">
                 ¿Por qué elegir mis servicios?
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
-                    <span className="text-gray-700">{achievement}</span>
+                    <CheckCircle className="text-yellow-400 mt-1 flex-shrink-0" size={20} />
+                    <span className="text-gray-300">{achievement}</span>
                   </div>
                 ))}
               </div>
@@ -55,6 +55,10 @@ export const AboutSection = () => {
           </div>
         </div>
       </div>
+      
+      <div className="bg-dots absolute inset-0 opacity-30"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent"></div>
+      <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-yellow-500/10 rounded-full filter blur-3xl animate-pulse-glow"></div>
     </section>
   );
 };

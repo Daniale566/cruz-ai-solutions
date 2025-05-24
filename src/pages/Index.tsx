@@ -4,15 +4,18 @@ import { HeroSection } from "@/components/HeroSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { AboutSection } from "@/components/AboutSection";
 import { CTASection } from "@/components/CTASection";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black text-white dark">
+      <div className="bg-dots absolute inset-0 opacity-30"></div>
       <Header />
       <HeroSection />
       <ServicesSection />
       <AboutSection />
+      <ContactForm />
       <CTASection />
       <Footer />
     </div>
