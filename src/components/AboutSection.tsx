@@ -4,10 +4,10 @@ import { CheckCircle } from "lucide-react";
 
 export const AboutSection = () => {
   const achievements = [
-    "Especialista en Inteligencia Artificial empresarial",
-    "Más de 50 proyectos de automatización exitosos",
-    "Reducción promedio del 40% en costos operativos",
-    "Implementaciones en múltiples industrias"
+    "Ingeniero de Sistemas especializado en IA",
+    "Organizador de hackathons de innovación",
+    "Experto en automatización de procesos empresariales",
+    "Más de 50 proyectos de integración exitosos"
   ];
 
   return (
@@ -19,7 +19,7 @@ export const AboutSection = () => {
               Sobre <span className="text-gradient">Daniel Cruz</span>
             </h2>
             <p className="text-lg text-gray-400">
-              Experto en automatización empresarial con IA
+              Ingeniero de Sistemas y experto en automatización empresarial con IA
             </p>
           </div>
           
@@ -28,12 +28,12 @@ export const AboutSection = () => {
               <Card className="border-gray-800 bg-gray-900/50 backdrop-blur shadow-lg">
                 <CardContent className="p-8">
                   <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                    Ayudo a empresas a transformar sus operaciones mediante la integración estratégica de Inteligencia Artificial. 
-                    Mi enfoque se centra en crear soluciones prácticas que generen resultados mensurables.
+                    Como Ingeniero de Sistemas, he dedicado mi carrera a encontrar formas prácticas 
+                    de integrar la Inteligencia Artificial en empresas de todos los tamaños.
                   </p>
                   <p className="text-gray-300 text-lg leading-relaxed">
-                    Cada proyecto lo desarrollo con un enfoque personalizado, asegurando que la tecnología se adapte 
-                    perfectamente a las necesidades específicas de tu negocio.
+                    He organizado hackathons para fomentar la innovación tecnológica y siempre estoy dispuesto a ayudar 
+                    a empresas a dar el salto a la era digital con soluciones personalizadas y efectivas.
                   </p>
                 </CardContent>
               </Card>

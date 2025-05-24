@@ -1,14 +1,14 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Send, Sparkles } from "lucide-react";
+import { Send, Sparkles, ArrowDown } from "lucide-react";
 
 const formSchema = z.object({
   nombre: z.string().min(2, {
@@ -29,6 +29,7 @@ const formSchema = z.object({
 });
 
 export const ContactForm = () => {
+  const [step, setStep] = useState(1);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,7 +39,27 @@ export const ContactForm = () => {
       negocio: "",
       actividad: "",
     },
+    mode: "onChange"
   });
+
+  // Observar cambios en los campos para controlar el flujo del formulario
+  const nombreValue = form.watch("nombre");
+  const telefonoValue = form.watch("telefono");
+  const correoValue = form.watch("correo");
+  const negocioValue = form.watch("negocio");
+
+  // Determinar el paso actual basado en los valores completados
+  React.useEffect(() => {
+    if (nombreValue.length >= 2 && telefonoValue.length >= 6 && step === 1) {
+      setStep(2);
+    }
+    if (correoValue && correoValue.includes('@') && correoValue.includes('.') && step === 2) {
+      setStep(3);
+    }
+    if (negocioValue.length >= 2 && step === 3) {
+      setStep(4);
+    }
+  }, [nombreValue, telefonoValue, correoValue, negocioValue, step]);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // En el futuro, aquí se enviará a Supabase
@@ -66,99 +87,126 @@ export const ContactForm = () => {
           <Card className="border-gray-800 bg-gray-900/50 backdrop-blur">
             <CardHeader>
               <CardTitle className="text-white">Formulario de Contacto</CardTitle>
-              <CardDescription>Comparte los detalles de tu empresa para una consulta personalizada.</CardDescription>
+              <CardDescription>Comparte tus datos paso a paso para una consulta personalizada.</CardDescription>
             </CardHeader>
             <CardContent>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <FormField
-                      control={form.control}
-                      name="nombre"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-200">Nombre</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Tu nombre completo" 
-                              {...field} 
-                              className="bg-gray-800 border-gray-700 text-white" 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="telefono"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-200">Teléfono</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Tu número de contacto" 
-                              {...field} 
-                              className="bg-gray-800 border-gray-700 text-white" 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="nombre"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-gray-200">Nombre</FormLabel>
+                            <FormControl>
+                              <Input 
+                                placeholder="Tu nombre completo" 
+                                {...field} 
+                                className="bg-gray-800 border-gray-700 text-white" 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="telefono"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-gray-200">Teléfono</FormLabel>
+                            <FormControl>
+                              <Input 
+                                placeholder="Tu número de contacto" 
+                                {...field} 
+                                className="bg-gray-800 border-gray-700 text-white" 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    {step >= 2 && (
+                      <div className={`transition-all duration-300 ${step >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+                        <div className="flex justify-center my-2">
+                          <ArrowDown className="text-yellow-400 animate-bounce" />
+                        </div>
+                        <FormField
+                          control={form.control}
+                          name="correo"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-gray-200">Correo electrónico</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="tucorreo@ejemplo.com" 
+                                  type="email" 
+                                  {...field} 
+                                  className="bg-gray-800 border-gray-700 text-white" 
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                    )}
+
+                    {step >= 3 && (
+                      <div className={`transition-all duration-300 ${step >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+                        <div className="flex justify-center my-2">
+                          <ArrowDown className="text-yellow-400 animate-bounce" />
+                        </div>
+                        <FormField
+                          control={form.control}
+                          name="negocio"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-gray-200">Nombre del negocio</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="Nombre de tu empresa" 
+                                  {...field} 
+                                  className="bg-gray-800 border-gray-700 text-white" 
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                    )}
+
+                    {step >= 4 && (
+                      <div className={`transition-all duration-300 ${step >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
+                        <div className="flex justify-center my-2">
+                          <ArrowDown className="text-yellow-400 animate-bounce" />
+                        </div>
+                        <FormField
+                          control={form.control}
+                          name="actividad"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-gray-200">¿A qué se dedica tu negocio?</FormLabel>
+                              <FormControl>
+                                <Textarea 
+                                  placeholder="Describe brevemente la actividad de tu empresa" 
+                                  {...field} 
+                                  className="bg-gray-800 border-gray-700 text-white" 
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                    )}
                   </div>
-                  <FormField
-                    control={form.control}
-                    name="correo"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-gray-200">Correo electrónico</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="tucorreo@ejemplo.com" 
-                            type="email" 
-                            {...field} 
-                            className="bg-gray-800 border-gray-700 text-white" 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="negocio"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-gray-200">Nombre del negocio</FormLabel>
-                        <FormControl>
-                          <Input 
-                            placeholder="Nombre de tu empresa" 
-                            {...field} 
-                            className="bg-gray-800 border-gray-700 text-white" 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="actividad"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-gray-200">¿A qué se dedica tu negocio?</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Describe brevemente la actividad de tu empresa" 
-                            {...field} 
-                            className="bg-gray-800 border-gray-700 text-white" 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+
                   <Button 
                     type="submit" 
                     className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black font-medium"

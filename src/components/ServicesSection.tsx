@@ -6,23 +6,23 @@ export const ServicesSection = () => {
   const services = [
     {
       icon: Bot,
-      title: "Chatbots Inteligentes",
-      description: "Automatiza la atención al cliente 24/7 con chatbots que entienden y responden como humanos."
+      title: "Asistentes Digitales",
+      description: "Chatbots inteligentes que atienden a tus clientes 24/7, respondiendo preguntas y solucionando problemas como lo haría un humano."
     },
     {
       icon: TrendingUp,
-      title: "Análisis Predictivo",
-      description: "Toma decisiones informadas con análisis de datos impulsados por IA que predicen tendencias."
+      title: "Datos Inteligentes",
+      description: "Convierte tus datos en información valiosa que te ayuda a entender tendencias, anticipar necesidades y tomar mejores decisiones de negocio."
     },
     {
       icon: Clock,
-      title: "Automatización de Procesos",
-      description: "Elimina tareas repetitivas y libera tiempo valioso automatizando flujos de trabajo complejos."
+      title: "Automatización",
+      description: "Libera tiempo valioso de tu equipo automatizando tareas repetitivas, permitiéndoles enfocarse en lo que realmente importa para tu negocio."
     },
     {
       icon: Shield,
-      title: "Seguridad Inteligente",
-      description: "Protege tu empresa con sistemas de IA que detectan amenazas y anomalías en tiempo real."
+      title: "Protección Avanzada",
+      description: "Sistemas de seguridad inteligentes que protegen tu empresa detectando amenazas antes de que causen daño, manteniendo tus datos seguros."
     }
   ];
 
@@ -34,7 +34,7 @@ export const ServicesSection = () => {
             Servicios de <span className="text-gradient">Automatización con IA</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Transformo tu empresa con soluciones de inteligencia artificial que impulsan la eficiencia y el crecimiento.
+            Transformo tu empresa con soluciones prácticas de inteligencia artificial que impulsan la eficiencia y el crecimiento.
           </p>
         </div>
         
