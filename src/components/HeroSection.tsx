@@ -17,8 +17,10 @@ export const HeroSection = () => {
             EFICANCIA
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-            Inteligencia Artificial en tu Empresa
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in leading-tight">
+            <span className="block text-yellow-400">Inteligencia</span>
+            <span className="block text-yellow-400">Artificial</span>
+            <span className="block">en tu Empresa</span>
           </h1>
           
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in">
