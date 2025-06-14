@@ -1,28 +1,38 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, TrendingUp, Clock, Shield } from "lucide-react";
+import { Bot, Layers, Zap, Settings, Link as LinkIcon, BrainCog } from "lucide-react";
 
 export const ServicesSection = () => {
   const services = [
     {
+      icon: BrainCog,
+      title: "Infraestructura con Inteligencia Artificial",
+      description: "Implemento agentes de IA en tu empresa y los conecto a plataformas como WhatsApp, n8n y sistemas de gestión para entrar al mundo de la automatización avanzada."
+    },
+    {
+      icon: Zap,
+      title: "Automatización de Flujos con n8n",
+      description: "Diseño y creo flujos inteligentes que conectan tus aplicaciones favoritas, facilitando tareas automáticas y eliminando procesos repetitivos."
+    },
+    {
+      icon: Settings,
+      title: "Desarrollo Personalizado",
+      description: "Construyo soluciones tecnológicas a medida para satisfacer exactamente lo que tu negocio requiere y potenciar su crecimiento."
+    },
+    {
+      icon: Layers,
+      title: "Optimización de Procesos Empresariales",
+      description: "Analizo cómo trabajas y te ayudo a mejorar cada paso, haciendo que tu empresa sea más eficiente, rentable y fluida."
+    },
+    {
+      icon: LinkIcon,
+      title: "Integración de Plataformas",
+      description: "Uno todos tus sistemas y herramientas tecnológicas para que funcionen en armonía y puedas tener el control de tu operación desde un solo lugar."
+    },
+    {
       icon: Bot,
-      title: "Asistentes Digitales",
-      description: "Chatbots inteligentes que atienden a tus clientes 24/7, respondiendo preguntas y solucionando problemas como lo haría un humano."
-    },
-    {
-      icon: TrendingUp,
-      title: "Datos Inteligentes",
-      description: "Convierte tus datos en información valiosa que te ayuda a entender tendencias, anticipar necesidades y tomar mejores decisiones de negocio."
-    },
-    {
-      icon: Clock,
-      title: "Automatización",
-      description: "Libera tiempo valioso de tu equipo automatizando tareas repetitivas, permitiéndoles enfocarse en lo que realmente importa para tu negocio."
-    },
-    {
-      icon: Shield,
-      title: "Protección Avanzada",
-      description: "Sistemas de seguridad inteligentes que protegen tu empresa detectando amenazas antes de que causen daño, manteniendo tus datos seguros."
+      title: "Consultoría en Innovación Digital",
+      description: "Te acompaño con asesoría experta para que adoptes e implementes tecnología de manera efectiva, asegurando resultados reales y sostenibles."
     }
   ];
 
@@ -31,14 +41,14 @@ export const ServicesSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Servicios de <span className="text-gradient">Automatización con IA</span>
+            Servicios <span className="text-gradient">tecnológicos y de automatización</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Transformo tu empresa con soluciones prácticas de inteligencia artificial que impulsan la eficiencia y el crecimiento.
+            Llevo la digitalización y la inteligencia artificial a tu empresa con soluciones claras, prácticas y fáciles de entender.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Card key={index} className="hover:shadow-lg transition-all duration-300 border-gray-800 bg-gray-900/50 backdrop-blur hover:border-yellow-500/50 hover:-translate-y-1">
               <CardHeader className="text-center pb-4">

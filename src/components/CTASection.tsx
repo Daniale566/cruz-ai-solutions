@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
@@ -9,7 +8,7 @@ export const CTASection = () => {
   };
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/1234567890?text=Hola%20Daniel,%20me%20interesa%20conocer%20más%20sobre%20tus%20servicios%20de%20automatización%20con%20IA", "_blank");
+    window.open("https://wa.me/1234567890?text=Hola%20Daniel,%20quiero%20hablar%20contigo%20directamente%20sobre%20automatización%20para%20mi%20empresa", "_blank");
   };
 
   return (
@@ -45,7 +44,7 @@ export const CTASection = () => {
               <CardContent className="p-6 text-center">
                 <MessageCircle className="text-yellow-400 mx-auto mb-4" size={32} />
                 <h3 className="font-semibold text-white mb-2">WhatsApp</h3>
-                <p className="text-gray-400 mb-4">Conversación directa e inmediata</p>
+                <p className="text-gray-400 mb-4">Conversación directa e inmediata conmigo (Daniel)</p>
                 <Button 
                   onClick={handleWhatsAppClick}
                   className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black"
