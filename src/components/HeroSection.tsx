@@ -14,11 +14,11 @@ export const HeroSection = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center px-4 py-2 bg-yellow-900/30 text-yellow-400 rounded-full text-sm font-medium mb-8 animate-fade-in">
             <Zap size={16} className="mr-2" />
-            Automatización Empresarial con IA
+            EFICANCIA
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-            Integro <span className="text-gradient">Inteligencia Artificial</span> en tu Empresa
+            Inteligencia Artificial en tu Empresa
           </h1>
           
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in">
