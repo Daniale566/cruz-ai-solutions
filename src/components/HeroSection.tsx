@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
 
@@ -18,9 +17,8 @@ export const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in leading-tight">
-            <span className="block text-yellow-400">Inteligencia</span>
-            <span className="block text-yellow-400">Artificial</span>
-            <span className="block">en tu Empresa</span>
+            <span className="block text-yellow-400">Inteligencia Artificial</span>
+            <span className="block text-white">/en tu empresa</span>
           </h1>
           
           <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in">
@@ -48,12 +46,10 @@ export const HeroSection = () => {
         </div>
       </div>
       
-      {/* Efectos de fondo futuristas */}
       <div className="bg-grid absolute inset-0 opacity-20"></div>
       <div className="absolute -top-10 -right-10 w-60 h-60 bg-yellow-500/20 rounded-full filter blur-3xl animate-pulse-glow"></div>
       <div className="absolute -bottom-20 -left-10 w-80 h-80 bg-yellow-500/10 rounded-full filter blur-3xl animate-pulse-glow delay-700"></div>
       
-      {/* Elementos flotantes */}
       <div className="absolute top-1/4 right-[10%] w-8 h-8 bg-yellow-500/80 rounded-full filter blur-sm animate-float"></div>
       <div className="absolute bottom-1/3 left-[15%] w-4 h-4 bg-yellow-400/70 rounded-full filter blur-sm animate-float"></div>
       <div className="absolute top-1/2 left-[70%] w-6 h-6 bg-amber-500/60 rounded-full filter blur-sm animate-float"></div>
