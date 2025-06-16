@@ -17,12 +17,12 @@ export const HeroSection = () => {
             EFICANCIA
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in leading-tight">
-            <span className="block text-yellow-400">Inteligencia Artificial</span>
-            <span className="block text-white">en tu empresa</span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in leading-tight text-center">
+            <span className="block text-yellow-400 text-center">Inteligencia Artificial</span>
+            <span className="block text-white text-center">en tu empresa</span>
           </h1>
           
-          <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in">
+          <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in text-center">
             Optimiza procesos, reduce costos y aumenta la productividad con soluciones de IA personalizadas para tu negocio.
           </p>
           
