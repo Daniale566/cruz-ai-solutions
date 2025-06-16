@@ -1,14 +1,15 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MessageCircle, ArrowRight } from "lucide-react";
+import { Calendar, MessageCircle, ArrowRight } from "lucide-react";
 
 export const CTASection = () => {
-  const handleEmailClick = () => {
-    window.location.href = "mailto:daniel@tudominio.com?subject=Consulta sobre Automatización con IA";
+  const handleCalendlyClick = () => {
+    window.open("https://calendly.com/dinobits56/30min", "_blank");
   };
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/1234567890?text=Hola%20Daniel,%20quiero%20hablar%20contigo%20directamente%20sobre%20automatización%20para%20mi%20empresa", "_blank");
+    window.open("https://wa.me/573133467034?text=Hola%20Daniel,%20quiero%20hablar%20contigo%20directamente%20sobre%20automatización%20para%20mi%20empresa", "_blank");
   };
 
   return (
@@ -26,15 +27,19 @@ export const CTASection = () => {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <Card className="border-gray-800 bg-gray-900/50 backdrop-blur hover:border-yellow-500/30 transition-all hover:-translate-y-1">
               <CardContent className="p-6 text-center">
-                <Mail className="text-yellow-400 mx-auto mb-4" size={32} />
-                <h3 className="font-semibold text-white mb-2">Email</h3>
-                <p className="text-gray-400 mb-4">Envíame un mensaje detallado</p>
+                <MessageCircle className="text-yellow-400 mx-auto mb-4" size={32} />
+                <h3 className="font-semibold text-white mb-2">Cotización de Proyectos</h3>
+                <p className="text-gray-400 mb-2 text-sm">¿Tienes un proyecto en mente? Contáctame por WhatsApp para discutir tus necesidades y recibir una cotización personalizada.</p>
+                <ul className="text-left text-sm text-gray-500 mb-4 space-y-1">
+                  <li>• Evaluación de necesidades</li>
+                  <li>• Discusión de posibles soluciones</li>
+                  <li>• Cotización personalizada</li>
+                </ul>
                 <Button 
-                  onClick={handleEmailClick}
-                  variant="outline" 
-                  className="w-full border-yellow-500/30 hover:bg-yellow-950/30 text-yellow-400"
+                  onClick={handleWhatsAppClick}
+                  className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black"
                 >
-                  Escribir Email
+                  Cotizar por WhatsApp
                   <ArrowRight className="ml-2" size={16} />
                 </Button>
               </CardContent>
@@ -42,14 +47,20 @@ export const CTASection = () => {
             
             <Card className="border-gray-800 bg-gray-900/50 backdrop-blur hover:border-yellow-500/30 transition-all hover:-translate-y-1">
               <CardContent className="p-6 text-center">
-                <MessageCircle className="text-yellow-400 mx-auto mb-4" size={32} />
-                <h3 className="font-semibold text-white mb-2">WhatsApp</h3>
-                <p className="text-gray-400 mb-4">Conversación directa e inmediata conmigo (Daniel)</p>
+                <Calendar className="text-yellow-400 mx-auto mb-4" size={32} />
+                <h3 className="font-semibold text-white mb-2">Asesoría Personalizada</h3>
+                <p className="text-gray-400 mb-2 text-sm">¿Necesitas orientación profesional? Agenda una sesión de asesoría para resolver dudas específicas sobre automatización e IA.</p>
+                <ul className="text-left text-sm text-gray-500 mb-4 space-y-1">
+                  <li>• 1 hora de consulta</li>
+                  <li>• Soluciones a problemas específicos</li>
+                  <li>• Recomendaciones personalizadas</li>
+                </ul>
                 <Button 
-                  onClick={handleWhatsAppClick}
-                  className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black"
+                  onClick={handleCalendlyClick}
+                  variant="outline" 
+                  className="w-full border-yellow-500/30 hover:bg-yellow-950/30 text-yellow-400"
                 >
-                  Chatear Ahora
+                  Agendar asesoría
                   <ArrowRight className="ml-2" size={16} />
                 </Button>
               </CardContent>
