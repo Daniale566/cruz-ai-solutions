@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, MessageCircle, ArrowRight } from "lucide-react";
@@ -13,7 +12,7 @@ export const CTASection = () => {
   };
 
   return (
-    <section className="py-20 relative bg-gray-950">
+    <section id="cta-section" className="py-20 relative bg-gray-950">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -57,8 +56,7 @@ export const CTASection = () => {
                 </ul>
                 <Button 
                   onClick={handleCalendlyClick}
-                  variant="outline" 
-                  className="w-full border-yellow-500/30 hover:bg-yellow-950/30 text-yellow-400"
+                  className="w-full bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black"
                 >
                   Agendar asesoría
                   <ArrowRight className="ml-2" size={16} />

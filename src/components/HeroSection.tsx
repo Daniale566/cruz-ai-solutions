@@ -1,10 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap } from "lucide-react";
 
 export const HeroSection = () => {
   const scrollToContact = () => {
-    const element = document.getElementById('contacto');
+    const element = document.querySelector('#cta-section');
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
