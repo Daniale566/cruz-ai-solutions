@@ -34,7 +34,7 @@ export const Header = () => {
             Sobre mí
           </button>
           <Button 
-            onClick={() => scrollToSection('contacto')}
+            onClick={() => scrollToSection('cta-section')}
             className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black"
           >
             Contactar
@@ -66,7 +66,7 @@ export const Header = () => {
                 Sobre mí
               </button>
               <Button 
-                onClick={() => scrollToSection('contacto')}
+                onClick={() => scrollToSection('cta-section')}
                 className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-black w-fit"
               >
                 Contactar
