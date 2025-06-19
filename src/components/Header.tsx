@@ -21,22 +21,22 @@ export const Header = () => {
       <header className="fixed top-0 w-full backdrop-blur-md z-50 bg-black/50 border-b border-yellow-500/20">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="font-bold text-xl text-gradient">
-            DANIEL CRUZ
+            EFICACIA
           </div>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection('servicios')}
-              className="text-gray-300 hover:text-yellow-400 transition-colors"
-            >
-              Servicios
-            </button>
-            <button 
               onClick={() => scrollToSection('como-funciona')}
               className="text-gray-300 hover:text-yellow-400 transition-colors"
             >
               Cómo funciona
+            </button>
+            <button 
+              onClick={() => scrollToSection('servicios')}
+              className="text-gray-300 hover:text-yellow-400 transition-colors"
+            >
+              Servicios
             </button>
             <Button 
               onClick={() => scrollToSection('cta-section')}
@@ -59,16 +59,16 @@ export const Header = () => {
             <div className="absolute top-16 left-0 w-full bg-black/90 backdrop-blur-md border-b border-yellow-500/20 md:hidden">
               <nav className="flex flex-col space-y-4 p-4">
                 <button 
-                  onClick={() => scrollToSection('servicios')}
-                  className="text-gray-300 hover:text-yellow-400 transition-colors text-left"
-                >
-                  Servicios
-                </button>
-                <button 
                   onClick={() => scrollToSection('como-funciona')}
                   className="text-gray-300 hover:text-yellow-400 transition-colors text-left"
                 >
                   Cómo funciona
+                </button>
+                <button 
+                  onClick={() => scrollToSection('servicios')}
+                  className="text-gray-300 hover:text-yellow-400 transition-colors text-left"
+                >
+                  Servicios
                 </button>
                 <Button 
                   onClick={() => scrollToSection('cta-section')}
