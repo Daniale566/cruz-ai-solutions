@@ -1,38 +1,38 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, Layers, Zap, Settings, Link as LinkIcon, BrainCog } from "lucide-react";
+import { MessageCircle, Phone, Zap, Calendar, BarChart3, Users } from "lucide-react";
 
 export const ServicesSection = () => {
   const services = [
     {
-      icon: BrainCog,
-      title: "Infraestructura con Inteligencia Artificial",
-      description: "Implemento agentes de IA en tu empresa y los conecto a plataformas como WhatsApp, n8n y sistemas de gestión para entrar al mundo de la automatización avanzada."
+      icon: MessageCircle,
+      title: "Agente de WhatsApp con IA",
+      description: "Respuestas automáticas inteligentes que suenan naturales y atienden consultas las 24 horas del día."
+    },
+    {
+      icon: Phone,
+      title: "Agente de voz con IA",
+      description: "Recepción telefónica automatizada que habla naturalmente y puede agendar citas o dar información."
     },
     {
       icon: Zap,
-      title: "Automatización de Flujos con n8n",
-      description: "Diseño y creo flujos inteligentes que conectan tus aplicaciones favoritas, facilitando tareas automáticas y eliminando procesos repetitivos."
+      title: "Automatización de respuestas",
+      description: "Respuestas instantáneas y personalizadas para las preguntas más frecuentes de tus clientes."
     },
     {
-      icon: Settings,
-      title: "Desarrollo Personalizado",
-      description: "Construyo soluciones tecnológicas a medida para satisfacer exactamente lo que tu negocio requiere y potenciar su crecimiento."
+      icon: Calendar,
+      title: "Integración con calendarios y sistemas",
+      description: "Conectamos tu asistente con tu agenda y sistemas existentes para agendar automáticamente."
     },
     {
-      icon: Layers,
-      title: "Optimización de Procesos Empresariales",
-      description: "Analizo cómo trabajas y te ayudo a mejorar cada paso, haciendo que tu empresa sea más eficiente, rentable y fluida."
+      icon: BarChart3,
+      title: "Paneles de control",
+      description: "Monitorea en tiempo real todas las conversaciones, citas agendadas y métricas de conversión."
     },
     {
-      icon: LinkIcon,
-      title: "Integración de Plataformas",
-      description: "Uno todos tus sistemas y herramientas tecnológicas para que funcionen en armonía y puedas tener el control de tu operación desde un solo lugar."
-    },
-    {
-      icon: Bot,
-      title: "Consultoría en Innovación Digital",
-      description: "Te acompaño con asesoría experta para que adoptes e implementes tecnología de manera efectiva, asegurando resultados reales y sostenibles."
+      icon: Users,
+      title: "Acompañamiento personalizado",
+      description: "Te guiamos paso a paso en la implementación y optimización continua de tu asistente."
     }
   ];
 
@@ -41,10 +41,10 @@ export const ServicesSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Servicios <span className="text-gradient">tecnológicos y de automatización</span>
+            Servicios de <span className="text-gradient">atención automatizada</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Llevo la digitalización y la inteligencia artificial a tu empresa con soluciones claras, prácticas y fáciles de entender.
+            Soluciones completas para que nunca más pierdas un cliente por no responder a tiempo.
           </p>
         </div>
         

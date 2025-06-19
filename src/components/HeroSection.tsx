@@ -1,9 +1,15 @@
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 export const HeroSection = () => {
-  const scrollToContact = () => {
+  const scrollToDemo = () => {
     const element = document.querySelector('#cta-section');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToHowItWorks = () => {
+    const element = document.querySelector('#como-funciona');
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -11,36 +17,32 @@ export const HeroSection = () => {
     <section className="pt-32 pb-20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center px-4 py-2 bg-yellow-900/30 text-yellow-400 rounded-full text-sm font-medium mb-8 animate-fade-in">
-            <Zap size={16} className="mr-2" />
-            EFICANCIA
-          </div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in leading-tight text-center">
-            <span className="block text-yellow-400 text-center">Inteligencia Artificial</span>
-            <span className="block text-white text-center">en tu empresa</span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-8 animate-fade-in leading-tight">
+            <span className="block text-white mb-4">¿Pierdes clientes por</span>
+            <span className="block text-yellow-400">no responder a tiempo?</span>
           </h1>
           
-          <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in text-center">
-            Optimiza procesos, reduce costos y aumenta la productividad con soluciones de IA personalizadas para tu negocio.
+          <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto animate-fade-in leading-relaxed">
+            Creamos asistentes con inteligencia artificial que responden por WhatsApp o por voz de forma automática, 
+            <span className="text-yellow-400 font-semibold"> para que no dejes pasar ni una venta más.</span>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-lg px-8 py-3 text-black"
-              onClick={scrollToContact}
+              className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-lg px-8 py-4 text-black font-semibold"
+              onClick={scrollToHowItWorks}
             >
-              Comenzar Ahora
-              <ArrowRight className="ml-2" size={20} />
+              <Play className="mr-2" size={20} />
+              Ver cómo funciona
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="text-lg px-8 py-3 border-yellow-500/50 text-yellow-400 hover:bg-yellow-950/30"
-              onClick={() => document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-lg px-8 py-4 text-black font-semibold"
+              onClick={scrollToDemo}
             >
-              Ver Servicios
+              Solicita tu demo gratis
+              <ArrowRight className="ml-2" size={20} />
             </Button>
           </div>
         </div>
