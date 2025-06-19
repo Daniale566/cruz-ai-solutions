@@ -21,7 +21,7 @@ export const Header = () => {
       <header className="fixed top-0 w-full backdrop-blur-md z-50 bg-black/50 border-b border-yellow-500/20">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="font-bold text-xl text-gradient">
-            EFICACIA
+            EFICANCIA
           </div>
           
           {/* Desktop Navigation */}
