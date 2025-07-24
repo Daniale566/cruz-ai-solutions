@@ -1,13 +1,11 @@
 
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { CaseStudySection } from "@/components/CaseStudySection";
 import { ServicesSection } from "@/components/ServicesSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { AboutSection } from "@/components/AboutSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
+import { SuccessStoriesSection } from "@/components/SuccessStoriesSection";
 
 const Index = () => {
   return (
@@ -15,11 +13,9 @@ const Index = () => {
       <div className="bg-dots absolute inset-0 opacity-30"></div>
       <Header />
       <HeroSection />
-      <BenefitsSection />
-      <HowItWorksSection />
-      <CaseStudySection />
       <ServicesSection />
-      <TestimonialsSection />
+      <SuccessStoriesSection />
+      <AboutSection />
       <CTASection />
       <Footer />
     </div>
